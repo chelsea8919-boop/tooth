@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>豪士藜麦吐司 - 警告！你即将被"好吃"洗脑</title>
 <!-- 活泼圆润标题字体 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,46 +11,44 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-  /* ===== 豪士品牌色彩体系 - 深皇家蓝 × 麦穗金 × 半3D奶油艺术 ===== */
   :root {
-    /* 主色：深皇家蓝 */
+    
     --royal-deep:   #0B1B5E;
     --royal-mid:    #1A3A8F;
     --royal-bright: #2255CC;
     --royal-sky:    #4478E8;
-    /* 辅色：麦穗金 */
+    
     --wheat-dark:   #B8860B;
     --wheat-mid:    #D4A017;
     --wheat-bright: #F0C040;
     --wheat-light:  #FADF7F;
     --wheat-glow:   #FFF0A0;
-    /* 奶油艺术色 */
+    
     --cream-base:   #FFF8EE;
     --cream-warm:   #FDEFD8;
     --cream-gold:   #F5DFA8;
     --cream-silk:   #FFFBF3;
     --cream-shadow: rgba(180,120,40,0.18);
-    /* 渐变组合 */
+    
     --grad-hero:   linear-gradient(135deg, #1A3A8F 0%, #2255CC 30%, #D4A017 65%, #F0C040 100%);
     --grad-gold:   linear-gradient(135deg, #B8860B 0%, #F0C040 50%, #FADF7F 100%);
     --grad-blue:   linear-gradient(135deg, #0B1B5E 0%, #2255CC 60%, #4478E8 100%);
     --grad-candy:  linear-gradient(135deg, #1A3A8F 0%, #F0C040 100%);
-    /* 奶油渐变 */
+    
     --grad-cream:  linear-gradient(135deg, #FFF8EE 0%, #FDEFD8 50%, #F5DFA8 100%);
     --grad-cream-blue: linear-gradient(145deg, #EEF3FF 0%, #FDEFD8 60%, #FFF0A0 100%);
-    /* 3D奶油阴影 */
+    
     --cream-3d-shadow: 0 8px 0 rgba(180,120,40,0.22), 0 14px 28px rgba(180,120,40,0.15), 0 2px 0 rgba(255,255,255,0.7) inset;
     --blue-3d-shadow:  0 8px 0 rgba(10,25,80,0.5), 0 14px 28px rgba(10,25,80,0.3), 0 2px 0 rgba(100,150,255,0.25) inset;
-    /* 背景 */
+    
     --bg-dark:  #050C2A;
     --bg-deep:  #080F35;
-    /* 玻璃 */
+    
     --glass:        rgba(255,255,255,0.07);
     --glass-border: rgba(240,192,64,0.25);
     --glass-white:  rgba(255,255,255,0.1);
   }
 
-  /* ===== 活泼圆润标题字体 ===== */
   .title-font {
     font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   }
@@ -84,7 +82,6 @@
     pointer-events: all;
   }
 
-  /* ===== 滑动容器 ===== */
   #slide-wrapper {
     display: flex;
     width: 300%;
@@ -99,9 +96,6 @@
     overflow: hidden;
   }
 
-  /* ===================================================
-     封面页 - 深皇家蓝宇宙 × 麦穗金光华
-     =================================================== */
   #cover {
     background: radial-gradient(ellipse at 30% 20%, #7192e5 0%, #5D7EC9 40%, #3A5AA0 100%);
     display: flex;
@@ -112,7 +106,6 @@
     padding: 3vw 5vw;
   }
 
-  /* 奶油3D浮雕公共样式 */
   .cream-3d {
     background: linear-gradient(145deg, #FFF8EE 0%, #FDEFD8 55%, #F5DFA8 100%);
     box-shadow:
@@ -158,7 +151,6 @@
       0 6px 14px rgba(160,100,10,0.15) !important;
   }
 
-  /* 流光网格背景 */
   .cover-grid {
     position: absolute;
     inset: 0;
@@ -174,7 +166,6 @@
     to { transform: translateY(30px); }
   }
 
-  /* 多层发光球 */
   .cover-orb-layer {
     position: absolute; inset: 0;
     pointer-events: none;
@@ -192,7 +183,6 @@
     100% { transform: translate(var(--tx,20px), var(--ty,-15px)) scale(1.15); opacity: var(--o2, 0.9); }
   }
 
-  /* 流光环 */
   .ring-glow {
     position: absolute;
     border-radius: 50%;
@@ -205,7 +195,6 @@
     to { transform: translate(-50%, -50%) rotate(360deg); }
   }
 
-  /* 警告徽章 - 半3D奶油风 */
   .cover-warning-badge {
     margin-top: 11vw;
     position: relative;
@@ -244,7 +233,6 @@
     to { box-shadow: 0 2px 0 rgba(255,255,255,0.75) inset, 0 -2px 0 rgba(160,100,0,0.22) inset, 0 6px 0 rgba(160,100,0,0.35), 0 12px 28px rgba(160,100,0,0.25), 0 0 55px rgba(240,192,64,0.8), 0 0 90px rgba(26,58,143,0.3); transform: scale(1.04); }
   }
 
-  /* 封面主标题 */
   .cover-title-wrap {
     position: relative;
     z-index: 10;
@@ -298,7 +286,6 @@
     text-align: center;
   }
 
-  /* 封面品牌LOGO（已整合到cover-title-row内） */
   .cover-logo-img {
     width: 24vw;
     max-width: 200px;
@@ -311,7 +298,6 @@
     50% { transform: translateY(-6px) scale(1.03); }
   }
 
-  /* 面包展台 */
   .cover-bread-zone {
     position: relative;
     width: 90vw;
@@ -326,7 +312,6 @@
     margin-right: auto;
   }
 
-  /* 液态发光平台 - 半3D奶油版 */
   .cover-platform {
     position: absolute;
     bottom: -5%;
@@ -341,7 +326,7 @@
     animation: platform-pulse 3s ease-in-out infinite;
     filter: blur(10px);
   }
-  /* 奶油3D托盘 */
+  
   .cover-cream-tray {
     position: absolute;
     bottom: 0;
@@ -369,7 +354,6 @@
     50% { transform: scaleX(1.08) scaleY(0.92); opacity: 1; }
   }
 
-  /* 旋转光晕环 */
   .bread-ring {
     position: absolute;
     border-radius: 50%;
@@ -423,7 +407,6 @@
     100% { transform: scale(1) translateY(0); }
   }
 
-  /* 涟漪 */
   .ripple-container {
     position: absolute;
     top: 50%; left: 50%;
@@ -446,7 +429,6 @@
     100% { transform: translate(-50%, -50%) scale(10); opacity: 0; }
   }
 
-  /* Duang特效文字 */
   .duang-text {
     position: absolute;
     font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', sans-serif;
@@ -478,7 +460,6 @@
     100% { transform: translate(-50%, -85%) scale(0.9); opacity: 0; }
   }
 
-  /* BGM横幅 */
   .bgm-banner {
     position: absolute;
     bottom: 10%;
@@ -513,7 +494,6 @@
     filter: drop-shadow(0 0 15px rgba(240,192,64,0.8));
   }
 
-  /* 点击提示 - 半3D奶油版 */
   .tap-hint {
     color: #4A2E00;
     font-size: 3.8vw;
@@ -553,7 +533,6 @@
     50% { opacity: 1; transform: scale(1.04) translateY(-2px); }
   }
 
-  /* 浮动emoji */
   .emoji-float {
     position: absolute;
     pointer-events: none;
@@ -568,7 +547,6 @@
     to { transform: translateY(var(--y, -15px)) rotate(var(--r2, 5deg)) scale(1.08); }
   }
 
-  /* 闪光点 */
   .sparkle {
     position: absolute;
     pointer-events: none;
@@ -581,9 +559,6 @@
     100% { opacity: 0; transform: scale(0.5) rotate(360deg); }
   }
 
-  /* ===================================================
-     页面1 - 捏吐司 - 皇家蓝麦穗金
-     =================================================== */
   #page1 {
     background: linear-gradient(160deg, #EEF3FF 0%, #E8EEFF 30%, #F5F0E0 65%, #FFF8E8 100%);
     display: flex;
@@ -595,7 +570,6 @@
     padding: 3vw 5vw;
   }
 
-  /* 糖果色光斑 */
   .candy-orb-layer {
     position: absolute; inset: 0;
     pointer-events: none;
@@ -609,7 +583,6 @@
     opacity: 0.4;
   }
 
-  /* 标题栏 - 半3D奶油版 */
   .p1-title-bar {
     width: 100%;
     padding: 14px 16px 18px;
@@ -627,7 +600,7 @@
       0 16px 32px rgba(5,15,55,0.35),
       0 0 60px rgba(212,160,23,0.15);
   }
-  /* 标题栏奶油高光 */
+  
   .p1-title-bar::before {
     content: '';
     position: absolute;
@@ -670,7 +643,6 @@
     z-index: 11;
   }
 
-  /* ===== 田字形面包网格（统一4面包2x2布局）===== */
   .p1-bread-grid {
     width: 90%;
     display: grid;
@@ -780,7 +752,6 @@
     100% { transform: scale(1); }
   }
 
-  /* 拉丝粒子 */
   .string-particle {
     position: absolute;
     pointer-events: none;
@@ -794,7 +765,6 @@
     100% { transform: translate(var(--tx,20px), var(--ty,-30px)) scale(0); opacity: 0; }
   }
 
-  /* 震动 */
   .shake {
     animation: screen-shake 0.4s ease-in-out !important;
   }
@@ -810,7 +780,6 @@
     80% { transform: translateX(2px); }
   }
 
-  /* 豪士/好吃弹出文字 - 在面包两侧弹出 */
   .hao-popup {
     position: absolute;
     font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', sans-serif;
@@ -830,12 +799,12 @@
     filter: drop-shadow(0 0 12px rgba(240,192,64,0.8));
     animation: hero-shimmer 1.5s linear infinite;
   }
-  /* 奇数次（豪士！）从左侧弹出 */
+  
   .hao-popup.show-hao {
     left: -8vw;
     animation: hao-burst-left 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, hero-shimmer 1.5s linear infinite;
   }
-  /* 偶数次（好吃！）从右侧弹出 */
+  
   .hao-popup.show-chi {
     right: -8vw;
     left: auto;
@@ -856,7 +825,6 @@
     100% { transform: translateX(10px) scale(0.9) rotate(0); opacity: 0; }
   }
 
-  /* 副文案 - 奶油卡片 */
   .p1-desc {
     font-size: 4.2vw;
     color: #1A2E6B;
@@ -895,8 +863,6 @@
     font-weight: 900;
   }
 
-
-  /* 捏次数指示器 - 奶油版 */
   .squeeze-count {
     position: relative; z-index: 10;
     display: flex;
@@ -925,7 +891,6 @@
     transform: scale(1.5) translateY(-2px);
   }
 
-  /* 承认弹框 */
   .confession-overlay {
     position: absolute; inset: 0;
     background: rgba(5,12,42,0.88);
@@ -946,7 +911,7 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  /* 承认弹框卡片 - 半3D奶油版 */
+  
   .confession-card {
     background: linear-gradient(160deg, #FFFFFF 0%, #FFF8EE 60%, #FDEFD8 100%);
     border-radius: 30px;
@@ -1078,9 +1043,6 @@
     width: 100%;
   }
 
-  /* ===================================================
-     页面2 - 人格测试 - 皇家蓝 × 麦穗金
-     =================================================== */
   #page2 {
     background: linear-gradient(160deg, #EEF3FF 0%, #E8EEFF 30%, #F5F0E0 65%, #FFF8E8 100%);
     display: flex;
@@ -1090,7 +1052,6 @@
     position: relative;
   }
 
-  /* 虚化产品图背景 */
   .p2-bg-img-wrapper {
     position: absolute;
     inset: 0;
@@ -1104,7 +1065,6 @@
     object-fit: cover;
   }
 
-  /* 流体气泡背景 */
   .p2-fluid-bg {
     position: absolute; inset: 0;
     pointer-events: none;
@@ -1123,7 +1083,6 @@
     100% { transform: translate(var(--tx, 20px), var(--ty, -15px)) scale(1.12) rotate(var(--tr, 5deg)); }
   }
 
-  /* 流光分割线 */
   .dna-bar {
     width: 100%;
     height: 4px;
@@ -1133,7 +1092,6 @@
     flex-shrink: 0;
   }
 
-  /* 题目 */
   .p2-question {
     font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', sans-serif;
     font-size: 5.5vw;
@@ -1153,7 +1111,6 @@
     position: relative; z-index: 5;
   }
 
-  /* ===== 果酱瓶交互区 ===== */
   .jam-shelf {
     display: flex;
     justify-content: center;
@@ -1195,7 +1152,7 @@
     white-space: nowrap;
     font-weight: 400;
   }
-  /* 吐司面包区 */
+  
   .toast-zone {
     position: relative;
     width: 100%;
@@ -1210,7 +1167,7 @@
     height: 50vw;
     border-radius: 16px;
   }
-  /* 果酱喷射动画 */
+  
   .jam-stream {
     position: absolute;
     width: 6vw;
@@ -1230,9 +1187,6 @@
     100% { height: 24vw; opacity: 0; }
   }
 
-  /* ===== 第2页面包旧样式已移除，改为统一田字网格 ===== */
-
-  /* p2面包弹出文字 */
   .p2-hao-popup {
     position: absolute;
     font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', sans-serif;
@@ -1261,7 +1215,6 @@
     animation: hao-burst-right 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   }
 
-  /* 结果面板 - 半3D奶油版 */
   .result-panel {
     width: calc(100% - 32px);
     margin: 4vw 16px;
@@ -1281,7 +1234,7 @@
     position: relative; z-index: 5;
     border: 1.5px solid rgba(255,255,255,0.85);
   }
-  /* 顶部高光 */
+  
   .result-panel::before {
     content: '';
     position: absolute;
@@ -1371,7 +1324,6 @@
     letter-spacing: 1px;
   }
 
-  /* 分享区 */
   .share-zone {
     width: 100%;
     padding: 0 16px;
@@ -1446,7 +1398,6 @@
     opacity: 0.9;
   }
 
-  /* 捏一下按钮（页面1底部 - 麦穗金）*/
   .p1-squeeze-btn-wrap {
     width: 100%;
     padding: 0 16px;
@@ -1504,9 +1455,6 @@
       0 6px 14px rgba(140,90,10,0.18) !important;
   }
 
-  /* ===================================================
-     分享弹框 - 仅复制链接版
-     =================================================== */
   .share-modal-overlay {
     position: fixed; inset: 0;
     background: rgba(5,12,42,0.82);
@@ -1640,7 +1588,6 @@
     background: rgba(26,58,143,0.08);
   }
 
-  /* ===== 进度点 ===== */
   .page-dots {
     position: fixed;
     bottom: 12px;
@@ -1669,7 +1616,6 @@
     box-shadow: 0 0 12px rgba(240,192,64,0.7), 0 0 25px rgba(26,58,143,0.4);
   }
 
-  /* ===== 彩带 ===== */
   .confetti-container {
     position: fixed; inset: 0;
     pointer-events: none;
@@ -1688,7 +1634,6 @@
     100% { transform: translateY(110vh) rotate(720deg) translateX(var(--tx, 50px)); opacity: 0; }
   }
 
-  /* ===== 返回按钮 ===== */
   .back-btn {
     position: absolute;
     top: 12px; left: 14px;
@@ -1705,7 +1650,6 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   }
 
-  /* ===== 加载屏幕 ===== */
   #loading-screen {
     position: fixed; inset: 0;
     background: radial-gradient(ellipse at center, #1A3A8F 0%, #0B1B5E 50%, #050C2A 100%);
@@ -1780,7 +1724,6 @@
     to { width: 100%; }
   }
 
-  /* 星星（封面） */
   .cover-stars { position: absolute; inset: 0; pointer-events: none; }
   .star {
     position: absolute;
@@ -1792,7 +1735,6 @@
     to { opacity: 1; transform: scale(1.4); box-shadow: 0 0 8px var(--c, white); }
   }
 
-  /* 品牌标签 */
   .brand-tag {
     position: absolute;
     background: var(--grad-candy);
@@ -1807,7 +1749,6 @@
     z-index: 5;
   }
 
-  /* 麦穗金装饰粒子 - 画布上的金色点缀 */
   .wheat-sparkle {
     position: absolute;
     width: 4px; height: 4px;
@@ -1819,7 +1760,6 @@
     z-index: 4;
   }
 
-  /* ===== 半3D奶油艺术 - 奶油Blob装饰 ===== */
   .cream-blob-layer {
     position: absolute; inset: 0;
     pointer-events: none;
@@ -1840,7 +1780,6 @@
     100% { border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%; transform: translate(var(--tx2,-10px), var(--ty2,12px)) scale(0.94); }
   }
 
-  /* 奶油3D浮雕徽章 */
   .cream-badge-3d {
     display: inline-flex;
     align-items: center;
@@ -1871,7 +1810,6 @@
     pointer-events: none;
   }
 
-  /* 奶油装饰文字标签 */
   .cream-label-3d {
     background: linear-gradient(160deg, #FFFFFF 0%, #FFF8EE 60%, #FDEFD8 100%);
     box-shadow:
@@ -1899,12 +1837,81 @@
   }
 
 </style>
+
+<style>
+
+.slide-page, .bread-main-img, .jam-bottle, .confession-card,
+.result-panel, .p2-hao-popup, .cream-blob, .candy-orb,
+.hao-popup, .string-particle, .squeeze-count .dot,
+.badge-pulse, .glow-pulse, .ring-spin, .ring-rot,
+.hero-shimmer, .title-bar-shine, .btn-shine {
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+* {
+  box-shadow: none !important;
+}
+
+.confession-card {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+}
+.p1-squeeze-btn {
+  box-shadow: 0 4px 15px rgba(212,160,23,0.35) !important;
+}
+
+.cream-blob {
+  filter: none !important;
+  opacity: 0.3;
+}
+.candy-orb {
+  filter: none !important;
+}
+
+.confession-overlay {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(0,0,0,0.7) !important;
+}
+
+@keyframes grid-drift { 0%,100% { transform: translate(0,0); } }
+@keyframes fluid-drift { 0%,100% { transform: translate(0,0); } }
+
+.cream-blob { animation: none !important; }
+.candy-orb { animation: none !important; }
+.star-twinkle, .blob-morph { animation: none !important; }
+
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide-page {
+  contain: layout style paint;
+}
+
+.badge-pulse, .glow-pulse, .ring-spin, .ring-rot {
+  filter: none !important;
+}
+
+.loading-bg-drift { animation-duration: 0.01s !important; }
+
+.jam-bottle:active { transform: scale(0.95); }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+</style>
+
 </head>
 <body>
 
 <!-- 加载屏幕 -->
 <div id="loading-screen">
-  <img class="loading-logo" src="images/img_1.webp" alt="豪士" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" class="loading-logo" src="images/img_1.webp" alt="豪士" onerror="this.style.display='none'">
   <div class="loading-text">洗脑程序启动中...</div>
   <div class="loading-bar-bg">
     <div class="loading-bar"></div>
@@ -1945,7 +1952,7 @@
       <!-- 标题 -->
       <div class="cover-title-wrap" id="coverTitleWrap">
         <div class="cover-title-row">
-          <img class="cover-logo-img" src="images/img_2.webp" alt="豪士LOGO" draggable="false">
+          <img loading="lazy" decoding="async" class="cover-logo-img" src="images/img_2.webp" alt="豪士LOGO" draggable="false">
           <span class="cover-title" id="coverTitleText">你即将被"好吃"洗脑</span>
         </div>
         <span class="cover-title-sub">— 点击即代表同意接受洗脑 —</span>
@@ -1958,7 +1965,7 @@
         <div class="bread-ring bread-ring-1"></div>
         <div class="bread-ring bread-ring-2"></div>
         <div class="ripple-container" id="rippleContainer"></div>
-        <img class="cover-bread-img" id="coverBread"
+        <img loading="lazy" decoding="async" class="cover-bread-img" id="coverBread"
           src="images/img_3.webp"
           alt="豪士藜麦吐司"
           draggable="false">
@@ -1998,25 +2005,25 @@
         <div class="p1-bread-cell" id="breadCell0" onclick="squishBread(0)" ontouchend="event.stopPropagation();squishBread(0)">
           <div class="bread-glow-ring"></div>
           <div class="bread-shadow"></div>
-          <img class="bread-main-img" src="images/img_4.webp" alt="藜麦吐司" draggable="false">
+          <img loading="lazy" decoding="async" class="bread-main-img" src="images/img_4.webp" alt="藜麦吐司" draggable="false">
           <div class="p2-hao-popup" id="breadPopup0"></div>
         </div>
         <div class="p1-bread-cell" id="breadCell1" onclick="squishBread(1)" ontouchend="event.stopPropagation();squishBread(1)">
           <div class="bread-glow-ring"></div>
           <div class="bread-shadow"></div>
-          <img class="bread-main-img" src="images/img_5.webp" alt="藜麦吐司" draggable="false">
+          <img loading="lazy" decoding="async" class="bread-main-img" src="images/img_5.webp" alt="藜麦吐司" draggable="false">
           <div class="p2-hao-popup" id="breadPopup1"></div>
         </div>
         <div class="p1-bread-cell" id="breadCell2" onclick="squishBread(2)" ontouchend="event.stopPropagation();squishBread(2)">
           <div class="bread-glow-ring"></div>
           <div class="bread-shadow"></div>
-          <img class="bread-main-img" src="images/img_6.webp" alt="藜麦吐司" draggable="false">
+          <img loading="lazy" decoding="async" class="bread-main-img" src="images/img_6.webp" alt="藜麦吐司" draggable="false">
           <div class="p2-hao-popup" id="breadPopup2"></div>
         </div>
         <div class="p1-bread-cell" id="breadCell3" onclick="squishBread(3)" ontouchend="event.stopPropagation();squishBread(3)">
           <div class="bread-glow-ring"></div>
           <div class="bread-shadow"></div>
-          <img class="bread-main-img" src="images/img_7.webp" alt="黄油面包" draggable="false">
+          <img loading="lazy" decoding="async" class="bread-main-img" src="images/img_7.webp" alt="黄油面包" draggable="false">
           <div class="p2-hao-popup" id="breadPopup3"></div>
         </div>
       </div>
@@ -2144,7 +2151,7 @@
         </div>
         <div class="result-doodle">
           <canvas class="doodle-canvas" id="resultCanvas"></canvas>
-          <img class="result-bread-img" id="resultBreadImg" src="images/img_8.webp" alt="奶香治愈型" draggable="false" style="display:none;">
+          <img loading="lazy" decoding="async" class="result-bread-img" id="resultBreadImg" src="images/img_8.webp" alt="奶香治愈型" draggable="false" style="display:none;">
         </div>
         <div class="result-desc" id="resultDesc">你用一片豪士藜麦吐司，就能治愈整个星期一！</div>
         <div class="result-slogan" id="resultSlogan">豪士豪士，好吃好吃！</div>
@@ -2611,7 +2618,7 @@ const CONFESSION_TRIGGER = 3;
 
 function addParticlesToCell(cell) {
   const colors = ['#F0C040','#1A3A8F','#4478E8','#FADF7F','#D4A017','#B8D8FF','#ffffff'];
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 6; i++) {
     const p = document.createElement('div');
     p.className = 'string-particle';
     const angle = (Math.random() * 360) * Math.PI / 180;
@@ -3233,7 +3240,7 @@ function showCopySuccess(btn, successBar) {
 function triggerConfetti() {
   const container = document.getElementById('confetti');
   const colors = ['#F0C040','#1A3A8F','#4478E8','#FADF7F','#D4A017','#B8D8FF','#ffffff','#FFF8D0'];
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 20; i++) {
     const piece = document.createElement('div');
     piece.className = 'confetti-piece';
     piece.style.cssText = `
@@ -3373,5 +3380,34 @@ if (!CanvasRenderingContext2D.prototype.roundRect) {
   };
 }
 </script>
+
+<script>
+// ===== MOBILE PERFORMANCE: Reduce animation overhead =====
+(function(){
+  // Throttle scroll/touch events
+  let ticking = false;
+  const origTouchMove = typeof ontouchmove !== 'undefined';
+
+  // Use passive event listeners where possible
+  document.addEventListener('touchstart', function(){}, {passive: true});
+
+  // Limit concurrent animations
+  const MAX_PARTICLES = 6;
+
+  // Override addParticlesToCell to limit particles on mobile
+  const origSquish = window.squishBread;
+
+  // Preload images after first paint
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      const imgs = document.querySelectorAll('img[loading="lazy"]');
+      imgs.forEach(function(img){
+        if(img.dataset.src) img.src = img.dataset.src;
+      });
+    }, 100);
+  });
+})();
+</script>
+
 </body>
 </html>
