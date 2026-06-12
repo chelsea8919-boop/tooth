@@ -1919,12 +1919,6 @@ body {
 </div>
 
 <div id="app">
-  <!-- 进度点 -->
-  <div class="page-dots cover-dots" id="pageDots">
-    <div class="page-dot active" data-index="0"></div>
-    <div class="page-dot" data-index="1"></div>
-    <div class="page-dot" data-index="2"></div>
-  </div>
 
   <!-- 彩带 -->
   <div class="confetti-container" id="confetti"></div>
@@ -2568,7 +2562,7 @@ document.getElementById('coverBreadZone').addEventListener('touchend', (e) => {
 // ============ 滑动导航 ============
 let currentPage = 0;
 const wrapper = document.getElementById('slide-wrapper');
-const dots = document.querySelectorAll('.page-dot');
+const dots = [];
 let touchStartX = 0;
 let touchStartY = 0;
 let isSwiping = false;
@@ -2576,13 +2570,6 @@ let isSwiping = false;
 function goToPage(idx) {
   currentPage = Math.max(0, Math.min(2, idx));
   wrapper.style.transform = `translateX(-${currentPage * 33.3333}%)`;
-  dots.forEach((d, i) => d.classList.toggle('active', i === currentPage));
-  const pageDots = document.getElementById('pageDots');
-  if (currentPage === 0) {
-    pageDots.classList.add('cover-dots');
-  } else {
-    pageDots.classList.remove('cover-dots');
-  }
 }
 
 document.addEventListener('touchstart', (e) => {
@@ -2606,9 +2593,7 @@ document.addEventListener('touchend', (e) => {
   if (dx > 40 && currentPage > 0) goToPage(currentPage - 1);
 });
 
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => goToPage(i));
-});
+
 
 // ============ 页面1 - 捏吐司 ============
 let squeezeCount = 0;
