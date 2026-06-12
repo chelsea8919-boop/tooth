@@ -1,0 +1,9 @@
+bore exists: True
+PID: 30624
+[0.5s] [2m2026-06-05T01:54:17.716075Z[0m [32m INFO[0m [2mbore_cli::client[0m[2m:[0m connected to server [3mremote_port[0m[2m=[0m15936
+[0.5s] [2m2026-06-05T01:54:17.716104Z[0m [32m INFO[0m [2mbore_cli::client[0m[2m:[0m listening at bore.pub:15936
+[8.1s] [2m2026-06-05T01:54:25.220727Z[0m [32m INFO[0m [1mproxy[0m[1m{[0m[3mid[0m[2m=[0m45fde529-cf88-4b6b-b508-e8cd355c6edf[1m}[0m[2m:[0m [2mbore_cli::client[0m[2m:[0m new connection
+[8.5s] [2m2026-06-05T01:54:25.656971Z[0m [32m INFO[0m [1mproxy[0m[1m{[0m[3mid[0m[2m=[0m45fde529-cf88-4b6b-b508-e8cd355c6edf[1m}[0m[2m:[0m [2mbore_cli::client[0m[2m:[0m connection exited
+[18.0s] [2m2026-06-05T01:54:35.137730Z[0m [32m INFO[0m [1mproxy[0m[1m{[0m[3mid[0m[2m=[0ma6015ebf-168e-485d-a9ee-e81b0323432e[1m}[0m[2m:[0m [2mbore_cli::client[0m[2m:[0m new connection
+[19.1s] [2m2026-06-05T01:54:36.242527Z[0m [32m INFO[0m [1mproxy[0m[1m{[0m[3mid[0m[2m=[0ma6015ebf-168e-485d-a9ee-e81b0323432e[1m}[0m[2m:[0m [2mbore_cli::client[0m[2m:[0m connection exited
+[27.8s] [2m2026-06-05T01:54:44.936884Z[0m [32m INFO[0m [1mproxy[0m[1m{[0m[3mid[0m[2m=[0md8249649-dcdd-4afa-bc06-0c33797ecd42[1m}[0m[2m:[0m [2mbore_cli::client[0m[2m:[0m new connection
