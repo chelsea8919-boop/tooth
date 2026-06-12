@@ -1534,6 +1534,41 @@
     text-align: center;
     margin-bottom: 22px;
   }
+  /* 截图保存按钮 */
+  .screenshot-btn {
+    position: absolute;
+    top: 8px; left: 8px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: 1.5px solid rgba(240,192,64,0.3);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(180,120,40,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .screenshot-btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 1px 4px rgba(180,120,40,0.1);
+  }
+  .screenshot-btn svg { width: 18px; height: 18px; }
+  .screenshot-btn .screenshot-tip {
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6px;
+    background: rgba(26,58,143,0.9);
+    color: #fff;
+    font-size: 3vw;
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .screenshot-btn .screenshot-tip.show { opacity: 1; }
   .share-copy-zone {
     background: rgba(240,245,255,0.95);
     border-radius: 18px;
@@ -2167,6 +2202,10 @@ body {
 
       <!-- 结果面板 -->
       <div class="result-panel" id="resultPanel">
+        <button class="screenshot-btn" id="screenshotBtn" onclick="saveCardScreenshot()" aria-label="保存截图">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3A2010" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span class="screenshot-tip" id="screenshotTip">已保存到相册</span>
+        </button>
         <div class="result-header">
           <div class="result-title" id="resultTitle">奶香治愈型</div>
           <div class="result-badge" id="resultBadge">诊断完成</div>
@@ -2199,13 +2238,15 @@ body {
     <div class="copy-success-bar" id="copySuccessBar">链接已复制！快去粘贴给好友吧～</div>
     <div class="share-copy-zone">
       <span class="share-copy-icon">🍞</span>
-      <span class="share-copy-url" id="shareCopyUrl">https://horsh-toast.h5.page/</span>
+      <span class="share-copy-url" id="shareCopyUrl">https://chelsea8919-boop.github.io/tooth/</span>
       <button class="share-copy-btn" id="shareCopyBtn" onclick="copyShareLink()">复制链接</button>
     </div>
     <button class="share-close-btn" onclick="closeShareModal()">取消</button>
   </div>
 </div>
 
+<!-- html2canvas - 用于截图保存 -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 // ============ 音效引擎 ============
 const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -3248,6 +3289,78 @@ function showCopySuccess(btn, successBar) {
     btn.style.color = '';
     successBar.classList.remove('show');
   }, 2500);
+}
+
+// ============ 截图保存人格卡片 ============
+async function saveCardScreenshot() {
+  const panel = document.getElementById('resultPanel');
+  const tip = document.getElementById('screenshotTip');
+  if (!panel) return;
+
+  // 临时隐藏截图按钮本身
+  const btn = document.getElementById('screenshotBtn');
+  if (btn) btn.style.visibility = 'hidden';
+
+  try {
+    const canvas = await html2canvas(panel, {
+      scale: 2,
+      backgroundColor: '#FFF8EE',
+      useCORS: true,
+      allowTaint: true,
+      logging: false
+    });
+
+    // 尝试用 Web Share API 保存图片（移动端支持）
+    if (navigator.share && navigator.canShare) {
+      canvas.toBlob(async (blob) => {
+        try {
+          const file = new File([blob], 'toast-personality.png', { type: 'image/png' });
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              files: [file],
+              title: '我的吐司人格',
+              text: '来看看你的吐司人格是什么吧！'
+            });
+          } else {
+            fallbackDownload(canvas);
+          }
+        } catch (e) {
+          if (e.name !== 'AbortError') fallbackDownload(canvas);
+        }
+      }, 'image/png');
+    } else {
+      fallbackDownload(canvas);
+    }
+
+    // 显示提示
+    if (tip) {
+      tip.textContent = '已保存到相册';
+      tip.classList.add('show');
+      setTimeout(() => tip.classList.remove('show'), 2000);
+    }
+  } catch (e) {
+    if (tip) {
+      tip.textContent = '保存失败，请长按保存';
+      tip.classList.add('show');
+      setTimeout(() => tip.classList.remove('show'), 2000);
+    }
+  } finally {
+    if (btn) btn.style.visibility = 'visible';
+  }
+}
+
+function fallbackDownload(canvas) {
+  try {
+    const link = document.createElement('a');
+    link.download = 'toast-personality.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    // 最后兜底：打开图片让用户长按保存
+    const dataUrl = canvas.toDataURL('image/png');
+    const w = window.open();
+    if (w) { w.document.write('<img src="'+dataUrl+'" style="max-width:100%;"/>'); }
+  }
 }
 
 // ============ 彩带（蓝金色系）============
